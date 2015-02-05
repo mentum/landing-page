@@ -1,0 +1,59 @@
+@bg-color: whitesmoke;
+@font-color: #2f2f2f;
+@padding: 30px;
+
+html {
+    body {
+        margin: 0;
+        background-color: @bg-color;
+        h1, h2, a, p, span {
+            font-family: 'Lato', sans-serif;
+            font-weight: lighter;
+            color: @font-color;
+        }
+        h1 {
+            font-size: 50px;
+            font-weight: normal;
+            margin: 0;
+            text-align: center;
+        }
+        h2 {
+            font-size: 20px;
+        }
+    }
+}
+
+header {
+    margin: @padding;
+    img {
+        height: 2* @padding;
+        float: left;
+    }
+    h2 {
+        float: left;
+        padding-left: @padding;
+    }
+}
+
+section {
+    position: relative;
+    div.center-width {
+        width: 400px;
+        height: 80vh;
+        margin: auto;
+        div.center-height {
+            position: absolute;
+            top: calc(~"50% - 60px");
+        }
+    }
+    h2 {
+        text-align: center;
+    }
+}
+
+footer {
+    text-align: center;
+    a {
+        margin: 0 10px;
+    }
+}
