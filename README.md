@@ -1,2 +1,2 @@
-# landing-page
+# mentum
 mentum's landing page
