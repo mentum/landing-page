@@ -1,11 +1,14 @@
 @bg-color: whitesmoke;
 @font-color: #2f2f2f;
 @padding: 30px;
+@text-width: 400px;
 
 html {
     body {
         margin: 0;
         background-color: @bg-color;
+        position: relative;
+        height: 100vh;
         h1, h2, a, p, span {
             font-family: 'Lato', sans-serif;
             font-weight: lighter;
@@ -19,12 +22,15 @@ html {
         }
         h2 {
             font-size: 20px;
+            br {
+                display: none;
+            }
         }
     }
 }
 
 header {
-    margin: @padding;
+    padding: @padding;
     img {
         height: 2* @padding;
         float: left;
@@ -35,24 +41,32 @@ header {
     }
 }
 
-section {
-    position: relative;
-    div.center-width {
-        width: 400px;
-        height: 80vh;
-        margin: auto;
-        div.center-height {
-            position: absolute;
-            top: calc(~"50% - 60px");
-        }
-    }
+section.center {
+    position: absolute;
+    width: @text-width;
+    max-width: 100%;
+    top: 35vh;
+    left: calc(~"50% - "@text-width/2);
     h2 {
         text-align: center;
     }
 }
 
+@media all and (max-width: @text-width) {
+    section.center {
+        left:0;
+        text-align: center;
+        h2 br {
+            display: inline;
+        }
+    }
+}
+
 footer {
+    position: absolute;
     text-align: center;
+    width: 100%;
+    bottom: @padding;
     a {
         margin: 0 10px;
     }
